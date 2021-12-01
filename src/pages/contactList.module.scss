@@ -1,0 +1,182 @@
+.App {
+  background: #f5f7fa;
+  letter-spacing: 0.2px;
+
+  .App-header {
+    border: 1px solid black;
+    height: 65px;
+    background: #041d42;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+  }
+  .App-footer {
+    height: 50px;
+    background: #ffffff;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: #2b2929;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .App-logo {
+    width: 10%;
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 2px;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  .navbar {
+    display: flex;
+    flex-direction: row;
+
+    /* NAVIGATION */
+
+    nav ul {
+      list-style: none;
+      text-align: center;
+    }
+    nav ul li {
+      display: inline-block;
+    }
+    nav ul li a {
+      display: block;
+      padding: 15px;
+      text-decoration: none;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin: 0 10px;
+      font-size: 14px;
+      line-height: 18px;
+    }
+    nav ul li a,
+    nav ul li a:after,
+    nav ul li a:before {
+      transition: all 0.5s;
+    }
+
+    /* stroke */
+    .stroke ul li a,
+    .fill ul li a {
+      position: relative;
+    }
+    .stroke ul li a:after,
+    .fill ul li a:after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 0%;
+      content: ".";
+      color: transparent;
+      background: #ffffff;
+      height: 1px;
+    }
+    .stroke ul li a:hover:after {
+      width: 100%;
+    }
+
+    .fill ul li a {
+      transition: all 2s;
+    }
+
+    .fill ul li a:after {
+      text-align: left;
+      content: ".";
+      margin: 0;
+      opacity: 0;
+    }
+    .fill ul li a:hover {
+      color: #fff;
+      z-index: 1;
+    }
+    .fill ul li a:hover:after {
+      z-index: -10;
+      animation: fill 1s forwards;
+      -webkit-animation: fill 1s forwards;
+      -moz-animation: fill 1s forwards;
+      opacity: 1;
+    }
+    .navbar-ul {
+      list-style-type: none;
+
+      li {
+        display: inline;
+        padding: 11px 50px;
+        margin: 10px;
+        width: 130px;
+        background-color: #87e8de;
+        color: #006d75;
+        font-size: 16px;
+        font-weight: 600;
+      }
+      li:hover {
+        color: white;
+        border-bottom: 2px solid black;
+        background-color: #006d75;
+      }
+    }
+  }
+  .App-logout {
+    width: 10%;
+    .logout-btn {
+      width: 90px;
+      padding: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      background-color: #ff7875;
+      color: white;
+      cursor: pointer;
+      border: none;
+      border-radius: 25px;
+    }
+    .logout-btn:hover {
+      font-weight: 700;
+      border: 1px solid #820014;
+      border-radius: 25px;
+      background-color: #ff4d4f;
+    }
+  }
+  .App-userinfo-container {
+    display: flex;
+    background: white;
+    height: 100px;
+    margin: auto;
+    align-items: center;
+
+    .user-name {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 80%;
+      margin: auto;
+      .name {
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 30px;
+        line-height: 36px;
+        color: #041d42;
+      }
+    }
+  }
+  .App-section {
+    margin: auto;
+    width: 80%;
+    height: auto;
+
+    .App-container {
+      display: flex;
+      width: 100%;
+      margin-top: 30px;
+    }
+  }
+}

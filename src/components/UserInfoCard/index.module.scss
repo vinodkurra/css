@@ -1,0 +1,51 @@
+.App-userinfo-container {
+  display: flex;
+  background: white;
+  height: 220px;
+  margin: auto;
+  align-items: center;
+  justify-content: 60px;
+  justify-content: center;
+  .userinfo-card {
+    width: 77%;
+    .user-name {
+      .name {
+        font-family: Lato;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 48px;
+        color: #002d72;
+      }
+      .created-date {
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 22px;
+        color: #6a7279;
+        margin-left: 7px;
+      }
+    }
+    .user-details {
+      display: flex;
+      margin-left: 7px;
+      margin-top: 15px;
+      justify-content: space-between;
+      .details {
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 13px;
+        line-height: 22px;
+        color: #6a7279;
+        .detail-two {
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 125%;
+          color: #151e29;
+        }
+      }
+    }
+  }
+}
