@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./contactList.module.scss";
 import Logo from "../ui/icons/logo";
 import Home from "../ui/icons/home";
@@ -9,6 +9,87 @@ import Plans from "../ui/icons/plans";
 import Add from "../ui/icons/add";
 import Calendar from "ui/icons/calendar";
 export default () => {
+  let names = [
+    "apple",
+    "cat",
+    "bat",
+    "dog",
+    "eat",
+    "fat",
+    "goat",
+    "hulk",
+    "irqonman",
+    "knife",
+    "looser",
+    "mern",
+    "node",
+    "oops",
+    "python",
+    "query",
+    "yeact",
+    "socket",
+    "url",
+    "vuejs",
+    "winning",
+    "xerox",
+    "yindex",
+    "zindex",
+  ];
+
+  const filterWith = (str) => {
+    return filterStartsWith(str);
+  };
+
+  const filterStartsWith = (str_starts) => {
+    return names.filter((x) => x.startsWith(str_starts));
+  };
+
+  const filterIncludesWith = (str_inc) => {
+    return names.filter((x) => x.includes(str_inc));
+  };
+
+  const fff = (aa) => {
+    return names.filter((x) => x.startsWith(aa));
+  };
+
+  const mmm = fff("zi");
+  console.log("KKKKKKKKKKKKKK", mmm);
+
+  const [selected, setSelected] = useState([]);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const selection = (e, elm, index) => {
+    if (e.ctrlKey) {
+      let list = [...selected];
+      let isExist = selected.findIndex((x) => x === elm);
+      if (isExist > -1) {
+        list.splice(isExist, 1);
+        setSelected([...list]);
+      } else {
+        setSelected([...list, elm]);
+      }
+    } else if (e.shiftKey) {
+      let list = [];
+      if (selectedIndex && selectedIndex < index) {
+        for (var i = selectedIndex; i <= index; i++) {
+          list.push(names[i]);
+        }
+      } else if (selectedIndex > index) {
+        for (var i = index; i <= selectedIndex; i++) {
+          list.push(names[i]);
+        }
+      } else {
+        for (var i = 0; i <= index; i++) {
+          list.push(names[i]);
+        }
+      }
+      setSelected([...list]);
+    } else {
+      setSelected([elm]);
+      setSelectedIndex(index);
+    }
+  };
+
   return (
     <div className={`${styles["App"]}`}>
       <header className={`${styles["App-header"]}`}>
@@ -61,11 +142,18 @@ export default () => {
             <table>
               <thead>
                 <tr>
-                  <th>12345</th>
-                  <th>12345</th>
-                  <th>12345</th>
-                  <th>12345</th>
-                  <th>12345</th>
+                  {names.map((elm, index) => {
+                    return (
+                      <td
+                        onClick={(e) => selection(e, elm, index)}
+                        className={
+                          selected.includes(elm) ? `${styles["apply-bg"]}` : ""
+                        }
+                      >
+                        {elm}
+                      </td>
+                    );
+                  })}
                 </tr>
               </thead>
               <tbody>

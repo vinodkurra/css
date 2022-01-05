@@ -1,7 +1,8 @@
 import "./App.css";
 import Page from "./pages/ContactRecordInfo";
+import Contacts from "./pages/contactList";
 function App() {
-  return <Page />;
+  return <Contacts />;
 }
 
 export default App;
